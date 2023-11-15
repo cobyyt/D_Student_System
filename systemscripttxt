@@ -1,0 +1,64 @@
+//drop database studsystem;
+
+create database studsystem;
+
+
+CREATE TABLE logins (
+  id INT PRIMARY KEY auto_increment,
+  name VARCHAR(50) NOT NULL,
+  passwords VARCHAR(25) NOT NULL
+);
+
+INSERT INTO logins (name, passwords) VALUES
+  ('John', '654321'),
+  ('Jane', '123456'),
+  ('Bob', '987654');
+
+CREATE TABLE students (
+  id INT PRIMARY KEY auto_increment,
+  name VARCHAR(50) NOT NULL,
+  gender VARCHAR(1) NOT NULL,
+  birthdate DATE NOT NULL,
+  phone VARCHAR(11) NOT NULL,
+  email VARCHAR(50) UNIQUE NOT NULL,
+  photo VARCHAR(255)
+);
+
+
+INSERT INTO students (name, gender, birthdate, phone, email, photo) VALUES
+  ('John Smith', 'M', '2000-01-01', '555-1234', 'john.smith@example.com', 's5.jpg'),
+  ('Jane Doe', 'F', '2000-01-02', '555-5678', 'jane.doe@example.com', 's4.jpg'),
+  ('Bob Johnson','M' , '2000-02-01', '555-9012', 'bob.johnson@example.com', 's3.jpg');
+
+
+CREATE TABLE courses (
+  cid INT PRIMARY KEY auto_increment,
+  cname VARCHAR(50) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  instructor VARCHAR(100) NOT NULL
+);
+
+
+INSERT INTO courses (cname, description, instructor) VALUES
+  ('Introduction to Programming', 'Learn the basics of programming.', 'Jay Smith'),
+  ('Database Management', 'Learn how to manage and query databases.', 'Jane Smith'),
+  ('Web Development', 'Learn how to build and deploy web applications.', 'Jerry Smith');
+
+
+CREATE TABLE enrollments (
+  eid INT PRIMARY KEY auto_increment,
+  student_id INT NOT NULL,
+  course_id INT NOT NULL,
+  grade DECIMAL(3,2) NOT NULL,
+  FOREIGN KEY (student_id) REFERENCES students(id),
+  FOREIGN KEY (course_id) REFERENCES courses(cid)
+);
+
+
+INSERT INTO enrollments (student_id, course_id, grade) VALUES
+  (1,1,3.5),
+  (1,2,4.0),
+  (2,2,3.8),
+  (3,3,4.0);
+
+

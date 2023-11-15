@@ -1,0 +1,43 @@
+
+	body {
+	     background-color:#cff5fd;  
+		 color:#012b55;
+	  }
+	  
+	  h1 {
+	     color:rgb(13, 32, 19);
+		 text-align:center;
+		 font-family:Monospace;
+		 font-size:50px;
+	  }
+	  
+	  p {
+	     color:black;
+		 font-size:20px;
+	  }
+	  
+	  
+	  #g1 {
+	     text-align:center;
+	  }
+	  
+	  #menu a {	  
+	      text-decoration:none;	  		  	 
+	  }
+	  
+	  #menu li {
+	      list-style-type:none;
+		  padding:10px;
+	  }
+	  
+	  #menu li:hover {
+	      background-color:rgb(235, 206, 46);
+		  color:white;
+	  }
+	  
+	  .active {
+	      background-color:lightblue;
+		  color:white;
+	  }
+	  
+      
