@@ -34,6 +34,7 @@
                     <li><a href="liststudent.php">List all Student</a></li>
                     <li><a href="deletestudent.php">Delete Student</a></li>
                     <li><a href="searchstudent.php">Search Student</a></li>
+                    <li><a href="updatestudent.php">Update Student</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>    
         </ul>
